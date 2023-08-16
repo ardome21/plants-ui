@@ -1,0 +1,31 @@
+<div class="container">
+<header class="title">
+  <h2>Plant App</h2>
+</header>
+<main class="content">
+  <div>
+    <p>Enter your plant here</p>
+    <div class="input">
+      <input type="text" placeholder="monstera..." [(ngModel)]="plantInput" (keyup.enter)="addPlant()">
+      <button (click)="addPlant()" [disabled]="!plantInput">Add Plant</button>
+    </div>
+  </div>
+  <div>
+    <p>Your Plants</p>
+    <div class="plant-list">
+      <i *ngIf="plantList.length === 0">No plants</i>
+      <ng-container *ngFor="let plant of plantList">
+        <p>{{plant}}</p>
+      </ng-container>
+    </div>
+    <button (click)="clearPlantList()" [disabled]="plantList.length === 0">Clear List</button>
+  </div>
+  <div>
+    <h3>Here I'm getting data from the backend</h3>
+    <p>(not the database though)</p>
+  </div>
+  <p>{{plant.name}}</p>
+  <button (click)="fetchDataAndSave()">Fetch Data and Save</button>
+  <button (click)="resetData()">Change Plant back to fixed to frontend data</button>
+
+</main>
