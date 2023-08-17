@@ -8,7 +8,7 @@ describe('DataTransferService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HttpClient, HttpHandler]
+      providers: [ HttpClient, HttpHandler ]
     });
     service = TestBed.inject(ApiService);
   });
